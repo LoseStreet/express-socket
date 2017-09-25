@@ -22,4 +22,10 @@ io.on('connection', function (socket) {
   socket.on('my other event', function (data) {
     console.log(data);
   });
+
+
+  // 定时发送数据
+  setInterval(function() {
+    socket.emit('news', { new: 'data' });
+  }, 1000)
 });
